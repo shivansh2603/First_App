@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Login page</string>
+    <string name="email">Enter Email</string>
+    <string name="password">Enter Password</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">       If new user, Click here</string>
+    <string name="enter_email_address">Enter Email Address</string>
+    <string name="set_password">Set Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_surname">Enter Surname</string>
+    <string name="enter_contact">Enter Contact No.</string>
+    <string name="navigate_but">Forgot Password?</string>
+    <string name="back_button_description">OK</string>
+
+</resources>
