@@ -43,9 +43,12 @@ class MainActivity : AppCompatActivity() {
         buttonLogin.setOnClickListener {
             if (validateLayout()) {
                 // Login can be done in the app
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
             } else {
-                Toast.makeText(this,"Please fill in correct credentials"
-                    ,Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please fill incorrect credentials"
+                    , Toast.LENGTH_SHORT)
+                    .show()
             }
         }
     }

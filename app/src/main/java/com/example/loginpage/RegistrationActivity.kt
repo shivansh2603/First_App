@@ -2,14 +2,13 @@ package com.example.loginpage
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.provider.ContactsContract.CommonDataKinds.Email
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import com.google.android.material.textfield.TextInputLayout
 
 class RegistrationActivity : AppCompatActivity() {
