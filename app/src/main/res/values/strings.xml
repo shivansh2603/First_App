@@ -13,5 +13,22 @@
     <string name="enter_contact">Enter Contact No.</string>
     <string name="navigate_but">Forgot Password?</string>
     <string name="back_button_description">OK</string>
+    <string name="home">Home</string>
+    <string name="calendar">Calendar</string>
+    <string name="profile">Profile</string>
+    <string name="enter_text">Enter text</string>
+    <string name="january">January</string>
+    <string name="february">February</string>
+    <string name="march">March</string>
+    <string name="april">April</string>
+    <string name="may">May</string>
+    <string name="june">June</string>
+    <string name="july">July</string>
+    <string name="august">August</string>
+    <string name="september">September</string>
+    <string name="october">October</string>
+    <string name="november">November</string>
+    <string name="december">December</string>
+    <string name="which_month_do_you_want_to_view">Which month do you want to view?</string>
 
 </resources>
