@@ -30,19 +30,16 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/myToolbar"
-        android:padding="16dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
             android:orientation="vertical"
-            tools:ignore="UselessLeaf,UselessParent">
+            android:padding="16dp">
 
             <ImageView
                 android:id="@+id/logoImageView"
@@ -55,19 +52,17 @@
                 android:src="@drawable/amnex_main" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/reg_email_input_layout"
+                android:id="@+id/reg_name_input_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/reg_email"
+                    android:id="@+id/reg_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/enter_email_address"
-                    android:importantForAutofill="no"
-                    android:inputType="textEmailAddress"
+                    android:hint="@string/user_name"
+                    android:inputType="textPersonName"
                     tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -81,75 +76,127 @@
                     android:id="@+id/reg_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/set_password"
-                    android:importantForAutofill="no"
+                    android:hint="@string/password_new"
                     android:inputType="textPassword"
                     tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/reg_gender_input_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                app:cardCornerRadius="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/gender" />
+
+                    <RadioGroup
+                        android:id="@+id/genderRadioGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/maleRadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/male" />
+
+                        <RadioButton
+                            android:id="@+id/femaleRadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/female" />
+                    </RadioGroup>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/reg_confirm_password_input_layout"
+                android:id="@+id/reg_mobile_input_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/reg_confirm_password"
+                    android:id="@+id/reg_mobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/confirm_password"
-                    android:importantForAutofill="no"
-                    android:inputType="textPassword"
+                    android:hint="@string/mobile_number"
+                    android:inputType="phone"
                     tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/reg_name_input_layout"
+                android:id="@+id/reg_state_input_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/select_state">
+
+                <AutoCompleteTextView
+                    android:id="@+id/reg_state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/state_selection_description"
+                    android:inputType="none"
+                    tools:ignore="LabelFor,VisualLintTextFieldSize,EditableContentDescCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/reg_district_input_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/select_district">
+
+                <AutoCompleteTextView
+                    android:id="@+id/reg_district"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/district_selection_description"
+                    android:inputType="none"
+                    tools:ignore="EditableContentDescCheck,LabelFor,VisualLintTextFieldSize" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/reg_pincode_input_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/reg_name"
+                    android:id="@+id/reg_pincode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
-                    android:hint="@string/enter_name"
-                    android:importantForAutofill="no"
-                    android:inputType="textPersonName"
+                    android:hint="@string/pin_code"
+                    android:inputType="number"
                     tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/reg_surname_input_layout"
+                android:id="@+id/reg_address_input_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/reg_surname"
+                    android:id="@+id/reg_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/enter_surname"
-                    android:importantForAutofill="no"
-                    android:inputType="textPersonName"
-                    tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/reg_contact_input_layout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/reg_contact"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/enter_contact"
-                    android:importantForAutofill="no"
-                    android:inputType="phone|number"
-                    tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+                    android:hint="@string/address"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
@@ -158,8 +205,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:backgroundTint="@color/amnex"
-                android:text="@string/register"
-                tools:ignore="DuplicateSpeakableTextCheck" />
+                android:text="@string/register" />
+
         </LinearLayout>
-    </RelativeLayout>
+    </ScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
