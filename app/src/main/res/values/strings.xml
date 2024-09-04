@@ -42,5 +42,7 @@
     <string name="address">Address</string>
     <string name="state_selection_description">Select your state from the dropdown list</string>
     <string name="district_selection_description">Select your district from the dropdown list</string>
+    <string name="frameworks">frameworks</string>
+    <string name="icons_hulalala">icons</string>
 
 </resources>

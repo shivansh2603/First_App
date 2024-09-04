@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -33,6 +35,9 @@ class HomeFragment : Fragment() {
             "When I wrote this code, only God and I understood what I did. Now only God knows.  – Anonymous",
             "I’m not a great programmer; I’m just a good programmer with great habits. ― Kent Beck"
         )
+        val dividerItemDecoration = DividerItemDecoration(recyclerView.context, LinearLayoutManager.VERTICAL)
+        dividerItemDecoration.setDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.divider)!!)
+        recyclerView.addItemDecoration(dividerItemDecoration)
 
         val adapter = HomeAdapter(items)
         recyclerView.adapter = adapter

@@ -9,6 +9,12 @@
         app:showAsAction="ifRoom" />
 
     <item
+        android:id="@+id/navigation_frameworks"
+        android:icon="@drawable/icons8_code_50"
+        android:title="@string/frameworks"
+        app:showAsAction="ifRoom" />
+
+    <item
         android:id="@+id/navigation_calendar"
         android:icon="@drawable/icons8_calender_64"
         android:title="@string/calendar"

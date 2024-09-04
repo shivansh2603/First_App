@@ -24,7 +24,10 @@ class HomeActivity : AppCompatActivity() {
                     replaceFragment(HomeFragment())
                     true
                 }
-
+                R.id.navigation_frameworks -> {
+                    replaceFragment(FrameworkFragment())
+                    true
+                }
                 R.id.navigation_calendar -> {
                     replaceFragment(CalendarFragment())
                     true
