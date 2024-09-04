@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.loginpage.FrameWorkPhoto
 
 class FrameworkFragment : Fragment(){
     override fun onCreateView(
@@ -22,9 +21,9 @@ class FrameworkFragment : Fragment(){
         val recyclerView : RecyclerView = view.findViewById(R.id.frameworksRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        val dividerItemDecoration = DividerItemDecoration(recyclerView.context, LinearLayoutManager.VERTICAL)
+        /*val dividerItemDecoration = DividerItemDecoration(recyclerView.context, LinearLayoutManager.VERTICAL)
         dividerItemDecoration.setDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.divider)!!)
-        recyclerView.addItemDecoration(dividerItemDecoration)
+        recyclerView.addItemDecoration(dividerItemDecoration)*/
 
         val frameworks = listOf(
             FrameWorkPhoto("Android SDK", R.drawable.icons8_android_100),

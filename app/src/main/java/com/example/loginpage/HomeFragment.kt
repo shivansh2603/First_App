@@ -35,9 +35,9 @@ class HomeFragment : Fragment() {
             "When I wrote this code, only God and I understood what I did. Now only God knows.  – Anonymous",
             "I’m not a great programmer; I’m just a good programmer with great habits. ― Kent Beck"
         )
-        val dividerItemDecoration = DividerItemDecoration(recyclerView.context, LinearLayoutManager.VERTICAL)
+        /*val dividerItemDecoration = DividerItemDecoration(recyclerView.context, LinearLayoutManager.VERTICAL)
         dividerItemDecoration.setDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.divider)!!)
-        recyclerView.addItemDecoration(dividerItemDecoration)
+        recyclerView.addItemDecoration(dividerItemDecoration)*/
 
         val adapter = HomeAdapter(items)
         recyclerView.adapter = adapter
