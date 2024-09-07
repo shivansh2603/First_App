@@ -45,9 +45,11 @@
     <string name="frameworks">frameworks</string>
     <string name="icons_hulalala">icons</string>
     <string name="amnex">AMNEX</string>
-    <string name="BuildingFuture">Smart Solutions for a Connected World</string>
+    <string name="BuildingFuture">Intelligence in Innovation</string>
     <string name="amnex_company_logo">Amnex company logo</string>
-    <string name="continue_with_google">Continue with Google</string>
+    <string name="continue_with_google">With Google</string>
     <string name="click_here_to_learn_more">Want to become a Member?</string>
     <string name="terms_broooooooooooo">By signing up, you confirm you have read the agreed to AMNEX\'s <u>Privacy Policy</u>, <u>Cookies</u> and <u>Terms</u>.</string>
+    <string name="amnex_logo">amnex logo</string>
+    <string name="continue_with_phone">With Phone</string>
 </resources>

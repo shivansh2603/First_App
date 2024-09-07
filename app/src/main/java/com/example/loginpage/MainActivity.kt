@@ -2,7 +2,9 @@ package com.example.loginpage
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageButton
+import android.widget.Button
+import android.graphics.drawable.GradientDrawable
+import android.graphics.Color
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -19,7 +21,14 @@ class MainActivity : AppCompatActivity() {
         emailLayout = findViewById(R.id.fillEmailLayout)
         passwordLayout = findViewById(R.id.fillPasswordLayout)
 
-
+        val loginButton = findViewById<Button>(R.id.loginButton)
+        loginButton.setOnClickListener {
+            if (validateLayout()) {
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+            }
+        }
+        
         val forgotPasswordButton = findViewById<TextView>(R.id.registerTextView)
         forgotPasswordButton.setOnClickListener {
             val intent = Intent(this, RegistrationActivity::class.java)
