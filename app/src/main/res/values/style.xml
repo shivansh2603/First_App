@@ -4,6 +4,7 @@
     <style name="RoundedButtonStyle" parent="Widget.MaterialComponents.Button">
         <item name="cornerRadius">20dp</item>
     </style>
+
     <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="boxCornerRadiusTopStart">20dp</item>
         <item name="boxCornerRadiusTopEnd">20dp</item>
@@ -14,12 +15,27 @@
         <item name="android:textColorHint">@android:color/white</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
+
     <style name="CircularImage">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+
     <style name="TextInputEditTextBlack" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
         <item name="android:textColor">@android:color/black</item>
+    </style>
+    <style name="TextInputLayoutStyle1" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">20dp</item>
+        <item name="boxCornerRadiusTopEnd">20dp</item>
+        <item name="boxCornerRadiusBottomStart">20dp</item>
+        <item name="boxCornerRadiusBottomEnd">20dp</item>
+        <item name="boxBackgroundColor">@color/silver</item>
+    </style>
+    <style name="DropdownItemStyle" parent="Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="TextInputLayoutStyle1.ExposedDropdownMenu" parent="TextInputLayoutStyle">
+        <item name="endIconMode">dropdown_menu</item>
     </style>
 
 </resources>

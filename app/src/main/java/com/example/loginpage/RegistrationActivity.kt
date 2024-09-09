@@ -3,15 +3,16 @@ package com.example.loginpage
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageButton
+import android.widget.RadioGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import com.google.android.material.textfield.TextInputLayout
 
 @Suppress("SameParameterValue")
@@ -84,41 +85,124 @@ class RegistrationActivity : AppCompatActivity() {
         "Uttarakhand" to listOf("Dehradun", "Haridwar", "Nainital"),
         "West Bengal" to listOf("Kolkata", "Siliguri", "Durgapur")
     )
-
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
 
         val rgEditTextName = findViewById<EditText>(R.id.reg_name)
-        nameLayout = findViewById(R.id.reg_name_input_layout)
+        nameLayout = findViewById(R.id.usernameLayout)
+        //for vanishing the hint
+        val originalNameHint = nameLayout.hint
+        rgEditTextName.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                nameLayout.hint = null
+            } else {
+                if (rgEditTextName.text.isNullOrEmpty()) {
+                    nameLayout.hint = originalNameHint
+                }
+            }
+        }
+
         val rgEditTextPassword = findViewById<EditText>(R.id.reg_password)
-        passwordLayout = findViewById(R.id.reg_password_input_layout)
+        passwordLayout = findViewById(R.id.passwordLayout)
+        //for vanishing the hint
+        val originalPasswordHint = passwordLayout.hint
+        rgEditTextPassword.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                passwordLayout.hint = null
+            } else {
+                if (rgEditTextPassword.text.isNullOrEmpty()) {
+                    passwordLayout.hint = originalPasswordHint
+                }
+            }
+        }
+
         val rgEditTextMobile = findViewById<EditText>(R.id.reg_mobile)
-        mobileLayout = findViewById(R.id.reg_mobile_input_layout)
+        mobileLayout = findViewById(R.id.mobileLayout)
+        val originalMobileHint = mobileLayout.hint
+        rgEditTextMobile.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                mobileLayout.hint = null
+            } else {
+                if (rgEditTextMobile.text.isNullOrEmpty()) {
+                    mobileLayout.hint = originalMobileHint
+                }
+            }
+        }
+
         val rgEditTextPincode = findViewById<EditText>(R.id.reg_pincode)
-        pincodeLayout = findViewById(R.id.reg_pincode_input_layout)
+        pincodeLayout = findViewById(R.id.pincodeLayout)
+        val originalPincodeHint = pincodeLayout.hint
+        rgEditTextPincode.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                pincodeLayout.hint = null
+            } else {
+                if (rgEditTextPincode.text.isNullOrEmpty()) {
+                    pincodeLayout.hint = originalPincodeHint
+                }
+            }
+        }
+
         val rgEditTextAddress = findViewById<EditText>(R.id.reg_address)
         addressLayout = findViewById(R.id.reg_address_input_layout)
-
+        val originalAddressHint = addressLayout.hint
+        rgEditTextAddress.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                addressLayout.hint = null
+            } else {
+                if (rgEditTextAddress.text.isNullOrEmpty()) {
+                    addressLayout.hint = originalAddressHint
+                }
+            }
+        }
         stateAutoCompleteTextView = findViewById(R.id.reg_state)
-        districtAutoCompleteTextView = findViewById(R.id.reg_district)
+        val stateLayout = findViewById<TextInputLayout>(R.id.reg_state_input_layout)
+        val originalStateHint = stateLayout.hint
+        stateAutoCompleteTextView.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                stateLayout.hint = null
+            } else {
+                stateLayout.hint = originalStateHint // Restore hint unconditionally
+            }
+        }
 
-        val rgButton = findViewById<Button>(R.id.btn_register)
-        val toolbar: Toolbar = findViewById(R.id.my_toolbar)
-        toolbar.setNavigationOnClickListener {
-            finish()
+        districtAutoCompleteTextView = findViewById(R.id.reg_district)
+        val districtLayout = findViewById<TextInputLayout>(R.id.reg_district_input_layout)
+        val originalDistrictHint = districtLayout.hint
+        districtAutoCompleteTextView.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                districtLayout.hint = null
+            } else {
+                districtLayout.hint = originalDistrictHint // Restore hint unconditionally
+            }
         }
-        val backButton = findViewById<ImageButton>(R.id.backButton)
-        backButton.setOnClickListener {
+
+        val rgButton = findViewById<Button>(R.id.register_button)
+        /*rgButton.setOnClickListener{
             finish()
-            //main screen done
+        }*/
+
+        val genderRadioGroup = findViewById<RadioGroup>(R.id.genderRadioGroup)
+        val genderLabel = findViewById<TextView>(R.id.genderLabel) // Use the correct ID for your label
+
+        genderRadioGroup.setOnCheckedChangeListener { _, checkedId ->
+            when (checkedId) {
+                R.id.maleRadioButton -> {
+                    // Handle male selection if needed
+                }
+                R.id.femaleRadioButton -> {
+                    // Handle female selection if needed
+                }
+            }
+            genderLabel.visibility = View.GONE
         }
+        //stateAutoCompleteTextView = findViewById(R.id.reg_state)
         val stateAdapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, states)
         stateAutoCompleteTextView.setAdapter(stateAdapter)
 
-        val districtAdapter =
-            ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, emptyList<String>())
+        //districtAutoCompleteTextView = findViewById(R.id.reg_district)
+        val districtAdapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, emptyList<String>())
         districtAutoCompleteTextView.setAdapter(districtAdapter)
 
         stateAutoCompleteTextView.setOnItemClickListener { parent, _, position, _ ->
@@ -174,9 +258,7 @@ class RegistrationActivity : AppCompatActivity() {
             mobile.isEmpty() ||
             ! android.util.Patterns.PHONE.matcher(mobile).matches() ||
             pincode.isEmpty() ||
-            address.isEmpty() ||
-            state.isEmpty() ||
-            district.isEmpty()
+            address.isEmpty()
         ) {
             showAlertBox("Please check your input and try again.")
             return false

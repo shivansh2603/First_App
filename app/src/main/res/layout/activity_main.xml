@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/amnex">
 
     <ImageView
         android:id="@+id/logoTextView"
         android:layout_width="272dp"
         android:layout_height="140dp"
-        android:layout_marginTop="40sp"
+        android:layout_marginTop="40dp"
         android:contentDescription="@string/amnex_logo"
         android:scaleType="fitCenter"
         android:src="@drawable/amnex_main"
@@ -56,13 +55,14 @@
         layout="@layout/custom_google_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
         android:layout_marginStart="16dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@id/fillEmailLayout"
         app:layout_constraintEnd_toStartOf="@id/customPhoneButton"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent" />
+
     <include
         android:id="@+id/customPhoneButton"
         layout="@layout/custon_phone_button"
@@ -96,25 +96,24 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="10dp"
         android:layout_marginEnd="16dp"
-        app:hintTextColor="@android:color/black"
+        android:layout_marginBottom="10dp"
         android:hint="@string/enter_email_address"
         android:textColorHint="@color/black"
         app:boxBackgroundColor="@color/silver"
+        app:hintTextColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@id/fillPasswordLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/fillPasswordLayout">
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            style="@style/TextInputEditTextBlack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:gravity="center_vertical"
-            style="@style/TextInputEditTextBlack"
-            android:textColor="@color/black"
             android:paddingStart="16dp"
-            android:paddingEnd="16dp"/>
+            android:paddingEnd="16dp"
+            android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -123,65 +122,66 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:hint="@string/password"
-        app:hintTextColor="@android:color/black"
         android:textColorHint="@color/black"
         app:boxBackgroundColor="@color/silver"
+        app:hintTextColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/loginButton">
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            style="@style/TextInputEditTextBlack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
             android:gravity="center_vertical"
-            style="@style/TextInputEditTextBlack"
+            android:inputType="textPassword"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:textColor="@android:color/black"
-            />
+            android:textColor="@android:color/black" />
     </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/login"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:textColor="@android:color/black"
-        android:backgroundTint="@color/silver"
         android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/silver"
+        android:text="@string/login"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toTopOf="@id/registerTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/registerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/click_here_to_learn_more"
         android:layout_marginBottom="24dp"
-        android:textSize="14sp"
+        android:text="@string/click_here_to_learn_more"
         android:textColor="@color/white"
+        android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/termsAndConditions"
-    />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/termsAndConditions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/terms_broooooooooooo"
         android:layout_marginBottom="16dp"
+        android:gravity="center_horizontal"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
-        android:textSize="14sp"
-        android:gravity="center_horizontal"
+        android:text="@string/terms_broooooooooooo"
         android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

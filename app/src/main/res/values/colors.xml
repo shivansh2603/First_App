@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <color name="black">#FF000000</color>
     <color name="white">#f6ffff</color>
     <color name="amnex">#030e4e</color>
     <color name="dividerColor">#000000</color>
     <color name="silver">#C0C0C0</color>
+    <color name="radio_button_color_state_list">
+        <item android:color="@color/your_color" android:state_checked="true"/>
+        <item android:color="@color/another_color" android:state_checked="false"/>
+    </color>
 </resources>

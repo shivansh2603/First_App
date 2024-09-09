@@ -7,7 +7,7 @@
     <string name="enter_email_address">Enter Email Address</string>
     <string name="set_password">Set Password</string>
     <string name="confirm_password">Confirm Password</string>
-    <string name="register">Register</string>
+    <string name="register">Create New Account</string>
     <string name="enter_name">Enter Name</string>
     <string name="enter_surname">Enter Surname</string>
     <string name="enter_contact">Enter Contact No.</string>
@@ -30,7 +30,7 @@
     <string name="november">November</string>
     <string name="december">December</string>
     <string name="which_month_do_you_want_to_view">Which month do you want to view?</string>
-    <string name="user_name">User Name</string>
+    <string name="user_name">Enter User Name</string>
     <string name="password_new">Password</string>
     <string name="gender">Gender:</string>
     <string name="male">Male</string>
@@ -52,4 +52,5 @@
     <string name="terms_broooooooooooo">By signing up, you confirm you have read the agreed to AMNEX\'s <u>Privacy Policy</u>, <u>Cookies</u> and <u>Terms</u>.</string>
     <string name="amnex_logo">amnex logo</string>
     <string name="continue_with_phone">With Phone</string>
+    <string name="register_butt">Register</string>
 </resources>
