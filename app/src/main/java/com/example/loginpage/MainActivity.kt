@@ -2,9 +2,9 @@ package com.example.loginpage
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
-import android.graphics.drawable.GradientDrawable
-import android.graphics.Color
+import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -18,16 +18,45 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val loginEmail = findViewById<EditText>(R.id.emailEdit)
         emailLayout = findViewById(R.id.fillEmailLayout)
+        val originalEmailHint = emailLayout.hint
+        loginEmail.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                emailLayout.hint = null
+            } else {
+                if (loginEmail.text.isNullOrEmpty()) {
+                    emailLayout.hint = originalEmailHint
+                }
+            }
+        }
+
+        val loginPassword = findViewById<EditText>(R.id.passwordEdit)
         passwordLayout = findViewById(R.id.fillPasswordLayout)
+        val originalLoginPasswordHint = passwordLayout.hint
+        loginPassword.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                passwordLayout.hint = null
+            } else {
+                if (loginEmail.text.isNullOrEmpty()) {
+                    passwordLayout.hint = originalLoginPasswordHint
+                }
+            }
+        }
 
         val loginButton = findViewById<Button>(R.id.loginButton)
         loginButton.setOnClickListener {
             if (validateLayout()) {
-                val intent = Intent(this, HomeActivity::class.java)
+                val intent = Intent(this, AppActivity::class.java)
                 startActivity(intent)
             }
         }
+        /*loginButton.setOnClickListener {
+            if (validateLayout()) {
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+            }
+        }*/
         
         val forgotPasswordButton = findViewById<TextView>(R.id.registerTextView)
         forgotPasswordButton.setOnClickListener {

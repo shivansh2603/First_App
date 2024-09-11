@@ -7,7 +7,7 @@
     <color name="dividerColor">#000000</color>
     <color name="silver">#C0C0C0</color>
     <color name="radio_button_color_state_list">
-        <item android:color="@color/your_color" android:state_checked="true"/>
-        <item android:color="@color/another_color" android:state_checked="false"/>
+        <item android:color="@color/black" android:state_checked="true"/>
+        <item android:color="@color/white" android:state_checked="false"/>
     </color>
 </resources>

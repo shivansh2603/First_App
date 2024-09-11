@@ -13,7 +13,7 @@
     <string name="enter_contact">Enter Contact No.</string>
     <string name="navigate_but">Forgot Password?</string>
     <string name="back_button_description">OK</string>
-    <string name="home">Home</string>
+    <string name="recycle">Recycle</string>
     <string name="calendar">Calendar</string>
     <string name="profile">Profile</string>
     <string name="enter_text">Enter text</string>
@@ -53,4 +53,5 @@
     <string name="amnex_logo">amnex logo</string>
     <string name="continue_with_phone">With Phone</string>
     <string name="register_butt">Register</string>
+    <string name="settings">Settings</string>
 </resources>

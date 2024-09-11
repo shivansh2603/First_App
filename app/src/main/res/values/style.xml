@@ -37,5 +37,19 @@
     <style name="TextInputLayoutStyle1.ExposedDropdownMenu" parent="TextInputLayoutStyle">
         <item name="endIconMode">dropdown_menu</item>
     </style>
+    <style name="BottomNavigationViewStyle" parent="Widget.Design.BottomNavigationView">
+        <item name="itemIconTint">@color/white</item>
+        <item name="itemTextColor">@color/white</item>
+        <item name="itemIconSize">32dp</item>
+        <item name="itemTextAppearanceActive">@style/BottomNavigationViewTextAppearanceActive</item>
+        <item name="itemTextAppearanceInactive">@style/BottomNavigationViewTextAppearanceInactive</item>
+    </style>
+
+    <style name="BottomNavigationViewTextAppearanceActive" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">14sp</item> </style>
+
+    <style name="BottomNavigationViewTextAppearanceInactive" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textSize">12sp</item>
+    </style>
 
 </resources>

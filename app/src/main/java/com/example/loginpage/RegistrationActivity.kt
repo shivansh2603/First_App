@@ -184,8 +184,7 @@ class RegistrationActivity : AppCompatActivity() {
         }*/
 
         val genderRadioGroup = findViewById<RadioGroup>(R.id.genderRadioGroup)
-        val genderLabel = findViewById<TextView>(R.id.genderLabel) // Use the correct ID for your label
-
+        //val genderLabel = findViewById<TextView>(R.id.genderLabel) // Use the correct ID for your label
         genderRadioGroup.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
                 R.id.maleRadioButton -> {
@@ -195,7 +194,7 @@ class RegistrationActivity : AppCompatActivity() {
                     // Handle female selection if needed
                 }
             }
-            genderLabel.visibility = View.GONE
+            //genderLabel.visibility = View.GONE
         }
         //stateAutoCompleteTextView = findViewById(R.id.reg_state)
         val stateAdapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, states)

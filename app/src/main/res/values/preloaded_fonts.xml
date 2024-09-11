@@ -2,14 +2,5 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/alkatra_medium</item>
-        <item>@font/anton</item>
-        <item>@font/bagel_fat_one</item>
-        <item>@font/bangers</item>
-        <item>@font/bayon</item>
-        <item>@font/freckle_face</item>
-        <item>@font/lobster</item>
-        <item>@font/rubik_vinyl</item>
-        <item>@font/spicy_rice</item>
-        <item>@font/stick</item>
     </array>
 </resources>

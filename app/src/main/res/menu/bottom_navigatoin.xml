@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/navigation_recycle"
+        android:icon="@drawable/cleaning_bucket_24px"
+        android:title="@string/recycle"
+        />
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/person_24px"
+        android:title="@string/profile"/>
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/settings_24px"
+        android:title="@string/settings"/>
+</menu>
