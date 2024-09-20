@@ -20,10 +20,10 @@ class AppActivity : AppCompatActivity() {
 
         // Set the initial fragment
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, RecycleScreen())
+            .replace(R.id.fragment_container, ProfileScreen())
             .commit()
 
-        bottomNavigationView.selectedItemId = R.id.navigation_recycle
+        bottomNavigationView.selectedItemId = R.id.navigation_profile
 
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
